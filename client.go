@@ -43,7 +43,6 @@ func (c *Client) Books(ids []string) ([]Book, error) {
 		return nil, err
 	}
 
-	// decode books
 	books, err := DecodeBooks(body)
 	if err != nil {
 		return nil, err

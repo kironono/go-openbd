@@ -25,6 +25,6 @@ books, err := openbd.DefaultClient().Books([]string{"9784814400041", "9784873115
 
 ## License
 
-`twee` is distributed under the terms of the MIT license.
+`go-openbd` is distributed under the terms of the MIT license.
 
 See the [LICENSE](LICENSE) files in this repository for more information.

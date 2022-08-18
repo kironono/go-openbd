@@ -1,5 +1,6 @@
 # `go-openbd`
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/kironono/go-openbd.svg)](https://pkg.go.dev/github.com/kironono/go-openbd)
 [![ci](https://github.com/kironono/go-openbd/actions/workflows/ci.yml/badge.svg)](https://github.com/kironono/go-openbd/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -15,7 +16,7 @@ $ go get github.com/kironono/go-openbd
 Import package:
 
 ```go
-import "github.com/kironono/go-openbd"
+import "github.com/kironono/openbd"
 ```
 
 Fetch OpenDB book information:

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"fmt"
 	"log"
@@ -13,9 +14,10 @@ func main() {
 	ids := flag.String("ids", "", "ISBNs")
 	flag.Parse()
 
+	ctx := context.Background()
 	client := openbd.DefaultClient()
 
-	books, err := client.Books(strings.Split(*ids, ","))
+	books, err := client.Books(ctx, strings.Split(*ids, ","))
 	if err != nil {
 		log.Panicf("error: %v", err)
 	}

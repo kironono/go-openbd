@@ -1,6 +1,7 @@
 package openbd
 
 import (
+	"context"
 	"io"
 	"net/http"
 	"strings"
@@ -190,8 +191,9 @@ func TestClient_Books(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			ctx := context.Background()
 			c := NewClient(tt.fields.Client, tt.fields.Host)
-			actual, err := c.Books(tt.args.ids)
+			actual, err := c.Books(ctx, tt.args.ids)
 			require.NoError(t, err)
 			assert.Equal(t, tt.want, actual)
 		})

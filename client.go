@@ -1,6 +1,7 @@
 package openbd
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"net/http"
@@ -28,12 +29,14 @@ func DefaultClient() *Client {
 	}
 }
 
-func (c *Client) Books(ids []string) ([]Book, error) {
+func (c *Client) Books(ctx context.Context, ids []string) ([]Book, error) {
 	endpoint := api.BooksEndpoint.Complement(c.Host)
 	req, err := http.NewRequest(http.MethodGet, endpoint, nil)
 	if err != nil {
 		return nil, fmt.Errorf("request failed: %w", err)
 	}
+	req.WithContext(ctx)
+
 	q := req.URL.Query()
 	q.Add("isbn", strings.Join(ids, ","))
 	req.URL.RawQuery = q.Encode()

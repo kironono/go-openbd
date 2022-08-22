@@ -22,7 +22,7 @@ import "github.com/kironono/openbd"
 Fetch OpenDB book information:
 
 ```go
-books, err := openbd.DefaultClient().Books([]string{"9784814400041", "9784873115658"})
+books, err := openbd.DefaultClient().Books(context.Background(), []string{"9784814400041", "9784873115658"})
 ```
 
 ## License
